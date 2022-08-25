@@ -1,0 +1,14 @@
+#include<stdio.h>
+void main()
+{
+	char str1[50];
+	int i,count=1;
+	printf("\nEnter a string: ");
+	gets(str1);
+	for(i=0;str1[i]!='\0';i++)
+	{
+	    if(str1[i]==' ')
+	    count++;
+    }
+	printf("\nNumber of words = %d",count);
+}
