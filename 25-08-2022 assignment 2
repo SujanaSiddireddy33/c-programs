@@ -1,0 +1,16 @@
+#include<stdio.h>
+void main()
+{
+	char str1[20];
+	int i;
+	printf("\nEnter a string: ");
+	gets(str1);
+	for(i=0;str1[i]!='\0';i++)
+	{
+		if(i%2!=0)
+		str1[i]=str1[i]-32;
+		else
+		str1[i]=str1[i];
+	}
+	puts(str1);	
+}
