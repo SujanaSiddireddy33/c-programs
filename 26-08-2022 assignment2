@@ -1,12 +1,14 @@
 #include<stdio.h>
-#include<string.h>
 void main()
 {
 	char s[30];
-	int i,j,size,c=0;
+	int i,j,size=0,c=0,k;
 	printf("\nEnter a string: ");
 	gets(s);
-	size=strlen(s);
+	for(k=0;s[k]!='\0';k++)
+	{
+		size++;
+	}
 	i=0,j=size-1;
 	while(i<size/2)
 	{
