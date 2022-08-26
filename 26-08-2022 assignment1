@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+	char s[50];
+	int uc=0,lc=0,num=0,i;
+	printf("\nEnter a string: ");
+	gets(s);
+	for(i=0;s[i]!='\0';i++)
+	{
+		if(isupper(s[i]))
+		uc++;
+		else if(islower(s[i]))
+		lc++;
+		else if(isdigit(s[i]))
+		num++;
+	}
+	printf("\nCount of uppercase characters: %d",uc);
+	printf("\nCount of lowercase characters: %d",lc);
+	printf("\nCount of numbers: %d",num);
+}
