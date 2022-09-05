@@ -1,0 +1,20 @@
+#include<stdio.h>
+void main()
+{
+	int n,i,a[30],len;
+	printf("Enter size of an array: \n");
+	scanf("%d",&n);
+	printf("Enter %d elements: \n",n);
+	for(i=0;i<n;i++)
+	scanf("%d",&a[i]);
+	len=n-1;
+	display(a,0,len);
+}
+void display(int a[],int start,int end)
+{
+	if(start>end)
+	return;
+	else
+	printf("%d\t",a[start]);
+	display(a,start+1,end);
+}
