@@ -1,0 +1,32 @@
+#include<stdio.h>
+void main()
+{
+	int t1=0,t2=1,t3,temp,n,i;
+	printf("Enter element to search in fibonacci series: ");
+	scanf("%d",&n);
+	t3=t2+t1;
+	for(i=1;i<50;i++)
+	{
+		if(t3==n || t1==n || t2==n)
+		{
+			printf("\nYes");
+			break;
+		}
+		else if(t3<n)
+		{
+			t1=t2;
+			t2=t3;
+	    	t3=t1+t2;
+	    	if(t3==n)
+	    	{
+	    		printf("\nYes");
+			    break;
+			}
+	    	else if(t3!=n && t3>n)
+	    	{
+	    		printf("\nNo");
+	    		break;   
+			}
+		}
+	}
+}
