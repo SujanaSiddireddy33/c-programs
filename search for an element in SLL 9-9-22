@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct linked_list
+{
+    int number;
+    struct linked_list *next;
+};
+
+typedef struct linked_list node;
+node *head=NULL, *last=NULL;
+
+void create_linked_list();
+void print_linked_list();
+void search_item(int value);
+void insert_at_last(int value);
+
+int main()
+{
+    int key, value;
+    
+    //Create a linked list
+    printf("Create Linked List\n");
+    create_linked_list();
+    print_linked_list();
+    //Search an item from Linked List
+    printf("\nEnter an item to search it from List: ");
+    scanf("%d", &value);
+    search_item(value);
+    return 0;
+}
+    
+void create_linked_list()
+{
+    int val;
+
+    while(1)
+    {
+        printf("\nInput a number(enter -1 to exit): ");
+scanf("%d", &val);
+if(val==-1)
+            break;
+
+        insert_at_last(val);
+    }
+}
+
+void search_item(int value)
+{
+    node *searchNode = head;
+    int flag = 0;
+
+    while(searchNode!=NULL)
+    {
+        if(searchNode->number==value)
+        {
+            printf("\n%d is present in this list.", value);
+            flag = 1;
+            break;
+        }
+        else
+            searchNode = searchNode->next;
+    }
+if(flag==0)
+        printf("\nItem not found\n");
+}
+
+void print_linked_list()
+{
+    printf("\nYour full linked list is\n");
+node *myList;
+    myList = head;
+
+    while(myList!=NULL)
+    {
+        printf("%d ", myList->number);
+myList = myList->next;
+    }
+    puts("");
+}
+
+void insert_at_last(int value)
+{
+    node *temp_node;
+    temp_node = (node *) malloc(sizeof(node));
+temp_node->number=value;
+    temp_node->next=NULL;
+    if(head==NULL)
+    {
+        head=temp_node;
+        last=temp_node;
+    }
+    else
+    {
+        last->next=temp_node;
+        last=temp_node;
+    }
+}
